@@ -1,8 +1,8 @@
 name: Update the profile README
 
-# The README comes from the project data of beetlebug.org: the workflow
-# runs tools/profile-readme.ts of the site repo and commits the README if it
-# changed.
+# The README comes from the project data of beetlebug.org: the site build
+# writes it to https://beetlebug.org/github-profile.md, and this workflow
+# downloads it each hour and commits it if it changed.
 on:
   schedule:
     - cron: "17 * * * *"
@@ -21,16 +21,8 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - uses: actions/checkout@v5
-        with:
-          repository: beetlebugorg/beetlebugorg.github.io
-          path: site
-
-      - uses: actions/setup-node@v5
-        with:
-          node-version: 24
-
-      - run: node --disable-warning=ExperimentalWarning site/tools/profile-readme.ts > README.md
+      # The site build writes the README from its project data.
+      - run: curl -fsSL https://beetlebug.org/github-profile.md -o README.md
 
       - run: |
           if git diff --quiet -- README.md; then

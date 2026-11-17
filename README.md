@@ -1,6 +1,12 @@
 # Jeremy Collins
 
-Open hardware and software projects. Each project has a page on [beetlebug.org](https://beetlebug.org/), and each 3D-printed build has a full guide.
+I'm a software and DevOps engineer by trade. In my own time I build software and 3D-printed hardware, and I write down how, so you can build them too.
+
+Most of my projects are fast native software in Zig and Go: a slicer for 3D printers ([zslice](https://beetlebug.org/projects/zslice/)), a touch screen and print server for Klipper printers ([Printdeck](https://beetlebug.org/projects/printdeck/)), and a chartplotter for boats ([Lookout Marine](https://beetlebug.org/projects/lookout-marine/)). Before those, I made image servers ([go-dims](https://beetlebug.org/projects/go-dims/) and [mod_dims](https://beetlebug.org/projects/mod-dims/)).
+
+My hardware is 3D printed and designed in code, so each dimension is a named value that you can change.
+
+Each project has a page on [beetlebug.org](https://beetlebug.org/), and each 3D-printed build has a full guide.
 
 ## Software
 
